@@ -1,25 +1,11 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://tasty-plate-iota.vercel.app/</loc>
-  </url>
-  <url>
-    <loc>https://tasty-plate-iota.vercel.app/recipe/masala-dosa</loc>
-  </url>
-  <url>
-    <loc>https://tasty-plate-iota.vercel.app/recipe/creamy-pasta</loc>
-  </url>
-  <url>
-    <loc>https://tasty-plate-iota.vercel.app/recipe/vegetable-salad</loc>
-  </url>
-  <url>
-    <loc>https://tasty-plate-iota.vercel.app/recipe/paneer-butter-masala</loc>
-  </url>
-  <url>
-    <loc>https://tasty-plate-iota.vercel.app/recipe/vegetable-samosa</loc>
-  </url>
-  <url>
-    <loc>https://tasty-plate-iota.vercel.app/recipe/chocolate-cake</loc>
-  </url>
+  <url><loc>https://tasty-plate-iota.vercel.app/</loc></url>
+  <url><loc>https://tasty-plate-iota.vercel.app/recipe/masala-dosa</loc></url>
+  <url><loc>https://tasty-plate-iota.vercel.app/recipe/creamy-pasta</loc></url>
+  <url><loc>https://tasty-plate-iota.vercel.app/recipe/vegetable-salad</loc></url>
+  <url><loc>https://tasty-plate-iota.vercel.app/recipe/paneer-butter-masala</loc></url>
+  <url><loc>https://tasty-plate-iota.vercel.app/recipe/vegetable-samosa</loc></url>
+  <url><loc>https://tasty-plate-iota.vercel.app/recipe/chocolate-cake</loc></url>
 </urlset>
