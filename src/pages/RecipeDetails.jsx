@@ -4,6 +4,44 @@ import { useEffect } from 'react';
 import recipes from '../recipes';
 import './RecipeDetails.css';
 
+const homepageTitle = 'Tasty Plate | Easy Indian & International Recipes';
+
+const homepageDescription =
+  'Discover easy Indian recipes, South Indian breakfast ideas, delicious snacks, healthy meals and international dishes. Find ingredients and step-by-step cooking instructions at Tasty Plate.';
+
+const seoContent = {
+  'masala-dosa': {
+    title: 'Masala Dosa | Easy South Indian Recipe - Tasty Plate',
+    description:
+      'Make crispy South Indian masala dosa with a flavourful spiced potato filling. Follow this easy recipe and serve with coconut chutney and sambar.'
+  },
+  'creamy-pasta': {
+    title: 'Creamy Italian Pasta Recipe | Tasty Plate',
+    description:
+      'Make creamy Italian pasta at home with garlic, milk, butter, cheese and herbs. Follow this easy pasta recipe for a delicious lunch or dinner.'
+  },
+  'vegetable-salad': {
+    title: 'Fresh Vegetable Salad Recipe | Tasty Plate',
+    description:
+      'Prepare a fresh vegetable salad with cucumber, tomatoes, carrot and lettuce. Try this quick 15-minute salad with a simple lemon dressing.'
+  },
+  'paneer-butter-masala': {
+    title: 'Paneer Butter Masala Recipe | Tasty Plate',
+    description:
+      'Make restaurant-style paneer butter masala with soft paneer cubes in rich tomato gravy. Enjoy this North Indian curry with naan, roti or rice.'
+  },
+  'vegetable-samosa': {
+    title: 'Crispy Vegetable Samosa Recipe | Tasty Plate',
+    description:
+      'Learn how to make crispy Indian vegetable samosas filled with spiced potatoes and green peas. Follow these step-by-step cooking instructions.'
+  },
+  'chocolate-cake': {
+    title: 'Homemade Chocolate Cake Recipe | Tasty Plate',
+    description:
+      'Bake a soft and rich homemade chocolate cake with cocoa powder, flour, eggs and milk. Follow this easy recipe for a delicious homemade dessert.'
+  }
+};
+
 function RecipeDetails() {
   const { id } = useParams();
   const recipe = recipes.find(item => item.id === id);
@@ -21,7 +59,14 @@ function RecipeDetails() {
 
     const siteUrl = window.location.origin;
     const pageUrl = `${siteUrl}/recipe/${recipe.id}`;
-    const seoTitle = `${recipe.name} - Easy ${recipe.cuisine} Recipe | Tasty Plate`;
+
+    const seo = seoContent[recipe.id] || {
+      title: `${recipe.name} Recipe | Tasty Plate`,
+      description: recipe.description
+    };
+
+    const seoTitle = seo.title;
+    const seoDescription = seo.description;
 
     document.title = seoTitle;
 
@@ -36,18 +81,19 @@ function RecipeDetails() {
       element.setAttribute(attribute, value);
     };
 
-    setMeta('meta[name="description"]', 'content', recipe.description);
+    setMeta('meta[name="description"]', 'content', seoDescription);
     setMeta('meta[name="robots"]', 'content', 'index, follow');
 
     setMeta('meta[property="og:type"]', 'content', 'article');
     setMeta('meta[property="og:title"]', 'content', seoTitle);
-    setMeta('meta[property="og:description"]', 'content', recipe.description);
+    setMeta('meta[property="og:description"]', 'content', seoDescription);
     setMeta('meta[property="og:image"]', 'content', recipe.image);
     setMeta('meta[property="og:url"]', 'content', pageUrl);
+    setMeta('meta[property="og:site_name"]', 'content', 'Tasty Plate');
 
     setMeta('meta[name="twitter:card"]', 'content', 'summary_large_image');
     setMeta('meta[name="twitter:title"]', 'content', seoTitle);
-    setMeta('meta[name="twitter:description"]', 'content', recipe.description);
+    setMeta('meta[name="twitter:description"]', 'content', seoDescription);
     setMeta('meta[name="twitter:image"]', 'content', recipe.image);
 
     let canonical = document.querySelector('link[rel="canonical"]');
@@ -69,7 +115,7 @@ function RecipeDetails() {
       '@context': 'https://schema.org',
       '@type': 'Recipe',
       name: recipe.name,
-      description: recipe.description,
+      description: seoDescription,
       image: [recipe.image],
       author: {
         '@type': 'Organization',
@@ -115,12 +161,12 @@ function RecipeDetails() {
       ]
     };
 
-    const addSchema = (id, data) => {
-      let script = document.getElementById(id);
+    const addSchema = (schemaId, data) => {
+      let script = document.getElementById(schemaId);
 
       if (!script) {
         script = document.createElement('script');
-        script.id = id;
+        script.id = schemaId;
         script.type = 'application/ld+json';
         document.head.appendChild(script);
       }
@@ -134,9 +180,35 @@ function RecipeDetails() {
     return () => {
       document.getElementById('recipe-schema')?.remove();
       document.getElementById('breadcrumb-schema')?.remove();
-      canonical?.remove();
 
-      document.title = 'Tasty Plate | Easy Indian & International Recipes';
+      document.title = homepageTitle;
+
+      setMeta('meta[name="description"]', 'content', homepageDescription);
+      setMeta('meta[name="robots"]', 'content', 'index, follow');
+
+      setMeta('meta[property="og:type"]', 'content', 'website');
+      setMeta('meta[property="og:title"]', 'content', homepageTitle);
+      setMeta('meta[property="og:description"]', 'content', homepageDescription);
+      setMeta(
+        'meta[property="og:url"]',
+        'content',
+        `${siteUrl}/`
+      );
+
+      setMeta(
+        'meta[name="twitter:title"]',
+        'content',
+        homepageTitle
+      );
+      setMeta(
+        'meta[name="twitter:description"]',
+        'content',
+        homepageDescription
+      );
+
+      if (canonical) {
+        canonical.href = `${siteUrl}/`;
+      }
     };
   }, [recipe]);
 
