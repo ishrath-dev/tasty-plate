@@ -1,0 +1,248 @@
+
+const recipes = [
+  {
+    id: "masala-dosa",
+    name: "South Indian Masala Dosa",
+    category: "Indian Breakfast",
+    cuisine: "South Indian",
+    time: "35 minutes",
+    prepTime: "15 minutes",
+    cookTime: "20 minutes",
+    servings: "4 servings",
+    difficulty: "Medium",
+    image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800",
+    description:
+      "Learn how to make crispy South Indian masala dosa filled with a flavourful potato masala. This popular breakfast dish pairs perfectly with coconut chutney and sambar.",
+    ingredients: [
+      "2 cups fermented dosa batter",
+      "3 medium potatoes",
+      "1 medium onion, thinly sliced",
+      "1 green chilli, finely chopped",
+      "1/2 teaspoon mustard seeds",
+      "1/2 teaspoon cumin seeds",
+      "8–10 curry leaves",
+      "1/4 teaspoon turmeric powder",
+      "2 tablespoons chopped coriander leaves",
+      "2 tablespoons cooking oil",
+      "Salt to taste",
+      "Water as needed"
+    ],
+    instructions: [
+      "Wash the potatoes and boil them until they are soft. Allow them to cool, peel and roughly mash them.",
+      "Heat one tablespoon of oil in a pan. Add mustard seeds and cumin seeds and allow them to splutter.",
+      "Add curry leaves, chopped green chilli and sliced onion. Sauté until the onion becomes soft.",
+      "Add turmeric powder and salt. Mix well before adding the mashed potatoes.",
+      "Sprinkle a little water if the mixture is too dry. Stir until the potato masala is evenly combined.",
+      "Add chopped coriander leaves, mix and keep the potato masala aside.",
+      "Heat a flat dosa tawa over medium heat and lightly grease it with oil.",
+      "Pour a ladle of dosa batter onto the centre and spread it gently in circular movements to form a thin dosa.",
+      "Drizzle a little oil around the edges and cook until the bottom turns golden and crisp.",
+      "Place some potato masala in the centre, fold the dosa and serve hot with coconut chutney and sambar."
+    ]
+  },
+  {
+    id: "creamy-pasta",
+    name: "Creamy Italian Pasta",
+    category: "International",
+    cuisine: "Italian",
+    time: "25 minutes",
+    prepTime: "10 minutes",
+    cookTime: "15 minutes",
+    servings: "2 servings",
+    difficulty: "Easy",
+    image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=800",
+    description:
+      "Make creamy Italian-style pasta at home with garlic, milk, butter, cheese and aromatic herbs. This easy pasta recipe is perfect for a quick lunch or comforting dinner.",
+    ingredients: [
+      "200g pasta",
+      "1 litre water for boiling",
+      "1 tablespoon salt for pasta water",
+      "2 tablespoons butter",
+      "2 garlic cloves, finely chopped",
+      "1 cup milk",
+      "1/2 cup grated cheese",
+      "1 teaspoon mixed Italian herbs",
+      "1/4 teaspoon black pepper",
+      "Salt to taste",
+      "1 tablespoon chopped parsley (optional)"
+    ],
+    instructions: [
+      "Bring water to a boil in a large pot. Add salt and pasta.",
+      "Cook the pasta according to the packet instructions until al dente. Reserve a little pasta water before draining.",
+      "Heat butter in a pan over medium-low heat. Add chopped garlic and sauté briefly until fragrant.",
+      "Pour in the milk and stir gently. Avoid letting the mixture boil rapidly.",
+      "Add grated cheese and stir until it melts into a smooth sauce.",
+      "Season with mixed herbs, black pepper and salt.",
+      "Add the cooked pasta and toss until every piece is coated with the creamy sauce.",
+      "If the sauce becomes too thick, add a little reserved pasta water and mix.",
+      "Garnish with chopped parsley if desired and serve immediately."
+    ]
+  },
+  {
+    id: "vegetable-salad",
+    name: "Fresh Vegetable Salad",
+    category: "Healthy Food",
+    cuisine: "International",
+    time: "15 minutes",
+    prepTime: "15 minutes",
+    cookTime: "0 minutes",
+    servings: "2 servings",
+    difficulty: "Easy",
+    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800",
+    description:
+      "Prepare a refreshing fresh vegetable salad with cucumber, tomatoes, carrot and lettuce. Finished with a simple lemon dressing, it makes an easy side dish or light meal.",
+    ingredients: [
+      "1 medium cucumber",
+      "2 medium tomatoes",
+      "1 medium carrot",
+      "1 cup fresh lettuce leaves",
+      "1/2 small red onion",
+      "1 tablespoon fresh lemon juice",
+      "1 tablespoon olive oil",
+      "1/4 teaspoon black pepper",
+      "Salt to taste",
+      "1 tablespoon chopped coriander leaves (optional)"
+    ],
+    instructions: [
+      "Wash the cucumber, tomatoes, carrot, lettuce and coriander leaves thoroughly under clean running water.",
+      "Peel the carrot if desired and grate it or cut it into thin strips.",
+      "Slice the cucumber and tomatoes into bite-sized pieces.",
+      "Thinly slice the red onion and tear the lettuce into smaller pieces.",
+      "Place all the prepared vegetables in a large salad bowl.",
+      "In a small bowl, combine lemon juice, olive oil, black pepper and salt.",
+      "Pour the dressing over the vegetables and toss gently until everything is coated.",
+      "Add chopped coriander leaves if desired.",
+      "Serve immediately while the vegetables are fresh and crisp."
+    ]
+  },
+  {
+    id: "paneer-butter-masala",
+    name: "Paneer Butter Masala",
+    category: "Indian Meals",
+    cuisine: "North Indian",
+    time: "40 minutes",
+    prepTime: "15 minutes",
+    cookTime: "25 minutes",
+    servings: "3 servings",
+    difficulty: "Medium",
+    image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800",
+    description:
+      "Enjoy restaurant-style paneer butter masala made with soft paneer cubes in a rich tomato-based gravy. This popular North Indian curry tastes delicious with naan, roti or steamed rice.",
+    ingredients: [
+      "200g paneer, cut into cubes",
+      "3 medium ripe tomatoes, chopped",
+      "1 medium onion, chopped",
+      "1 tablespoon ginger-garlic paste",
+      "2 tablespoons butter",
+      "1 tablespoon cooking oil",
+      "1/2 teaspoon cumin seeds",
+      "1/2 teaspoon red chilli powder",
+      "1/2 teaspoon garam masala",
+      "1/4 teaspoon turmeric powder",
+      "2 tablespoons fresh cream",
+      "1 tablespoon chopped coriander leaves",
+      "Salt to taste",
+      "Water as needed"
+    ],
+    instructions: [
+      "Heat one teaspoon of oil in a pan. Add chopped tomatoes and onions and cook until they become soft.",
+      "Allow the mixture to cool slightly and blend it into a smooth puree.",
+      "Heat butter and the remaining oil in a pan over medium heat.",
+      "Add cumin seeds and ginger-garlic paste. Sauté until fragrant.",
+      "Pour in the prepared tomato-onion puree and stir well.",
+      "Add red chilli powder, turmeric powder, garam masala and salt.",
+      "Cook the gravy over medium-low heat until it thickens and the oil begins to separate.",
+      "Add a little water if the gravy is too thick and bring it to a gentle simmer.",
+      "Add paneer cubes and cook gently for 3–4 minutes so they absorb the flavours.",
+      "Stir in fresh cream and garnish with chopped coriander leaves.",
+      "Serve hot with naan, roti or steamed basmati rice."
+    ]
+  },
+  {
+    id: "vegetable-samosa",
+    name: "Crispy Vegetable Samosa",
+    category: "Snacks",
+    cuisine: "Indian",
+    time: "45 minutes",
+    prepTime: "25 minutes",
+    cookTime: "20 minutes",
+    servings: "8 samosas",
+    difficulty: "Medium",
+    image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800",
+    description:
+      "Make crispy Indian vegetable samosas filled with spiced potatoes and green peas. These golden triangular snacks are delicious when served hot with mint chutney or tamarind chutney.",
+    ingredients: [
+      "2 cups all-purpose flour",
+      "4 tablespoons oil for the dough",
+      "1/2 teaspoon salt for the dough",
+      "Water as needed",
+      "3 medium potatoes",
+      "1/2 cup green peas",
+      "1/2 teaspoon cumin seeds",
+      "1/2 teaspoon coriander powder",
+      "1/2 teaspoon red chilli powder",
+      "1/2 teaspoon garam masala",
+      "1/2 teaspoon amchur (dry mango powder)",
+      "2 tablespoons chopped coriander leaves",
+      "Salt to taste",
+      "Oil for deep frying"
+    ],
+    instructions: [
+      "Combine all-purpose flour, salt and oil in a large mixing bowl.",
+      "Rub the oil into the flour until the mixture resembles coarse crumbs.",
+      "Add water gradually and knead into a firm, smooth dough. Cover and rest for 20 minutes.",
+      "Boil the potatoes until tender. Peel and cut them into small pieces.",
+      "Heat a little oil in a pan. Add cumin seeds and allow them to release their aroma.",
+      "Add green peas, potatoes, coriander powder, chilli powder, garam masala, amchur and salt.",
+      "Mix gently, cook for a few minutes and add chopped coriander leaves. Allow the filling to cool.",
+      "Divide the dough into eight portions and roll each portion into an oval shape.",
+      "Cut each oval in half. Shape one half into a cone by bringing the straight edges together and sealing the seam with a little water.",
+      "Fill the cone with the potato mixture and seal the open edge firmly.",
+      "Repeat with the remaining dough and filling.",
+      "Heat oil in a deep pan over medium-low heat. Carefully add the samosas in batches.",
+      "Fry slowly until the pastry becomes golden and crisp, turning occasionally for even cooking.",
+      "Drain on paper towels and serve warm with mint or tamarind chutney."
+    ]
+  },
+  {
+    id: "chocolate-cake",
+    name: "Homemade Chocolate Cake",
+    category: "Desserts",
+    cuisine: "International",
+    time: "50 minutes",
+    prepTime: "15 minutes",
+    cookTime: "35 minutes",
+    servings: "8 servings",
+    difficulty: "Medium",
+    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800",
+    description:
+      "Bake a soft and rich homemade chocolate cake using cocoa powder, flour, eggs and milk. This easy chocolate cake is a lovely dessert for celebrations, family gatherings and everyday treats.",
+    ingredients: [
+      "1 cup all-purpose flour",
+      "1/2 cup unsweetened cocoa powder",
+      "1 cup sugar",
+      "2 large eggs",
+      "1/2 cup milk",
+      "1/2 cup melted butter",
+      "1 teaspoon baking powder",
+      "1/2 teaspoon baking soda",
+      "1 teaspoon vanilla extract",
+      "A pinch of salt"
+    ],
+    instructions: [
+      "Preheat the oven to 180°C. Grease an 8-inch round cake tin and line its base with baking paper.",
+      "In a large bowl, sift together flour, cocoa powder, baking powder, baking soda and salt.",
+      "In another bowl, whisk the eggs and sugar until they are well combined.",
+      "Add the milk, melted butter and vanilla extract to the egg mixture. Mix gently.",
+      "Gradually add the dry ingredients to the wet mixture.",
+      "Fold the mixture gently until a smooth batter forms. Avoid overmixing.",
+      "Pour the batter into the prepared cake tin and spread it evenly.",
+      "Bake for approximately 30–35 minutes, or until a toothpick inserted into the centre comes out clean or with a few moist crumbs.",
+      "Remove the cake from the oven and allow it to cool in the tin for about 10 minutes.",
+      "Transfer the cake to a wire rack and let it cool completely before slicing.",
+      "Serve plain or decorate with chocolate frosting if desired."
+    ]
+  }
+];
+
+export default recipes;
